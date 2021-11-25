@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "log4js": "^6.3.0",
     "url": "^0.11.0"
   }
 }
