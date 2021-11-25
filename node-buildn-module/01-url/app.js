@@ -1,3 +1,7 @@
+/**
+ * url 该模块主要用于解析网页地址，但是缺陷在于解析出来的入参并非为键值集合，这可以通过queryString模块实现
+ */
+
 // 老版本
 // const url = require('url');
 // const urlObj = url.parse('https://example.org')
