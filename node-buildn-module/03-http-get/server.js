@@ -24,10 +24,10 @@ const httpServe = http.createServer((request, response) => {
             'content-type': 'application/json;charset=utf-8'
         })
 
-        console.log('333333', data)
+        console.log('333333',data)
         // logsUtil.logInfo(1111111)
 
-        response.write(JSON.stringify(queryString.parse(data)))
+        response.write(data)
         response.end()
     })
 })

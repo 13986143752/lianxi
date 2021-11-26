@@ -11,8 +11,8 @@ const serve = http.createServer((req, res) => {
     }
 })
 
-serve.listen(3000, () => {
-    console.log('服务器启动：3000')
+serve.listen(8080, () => {
+    console.log('服务器启动：http://localhost:8080')
 })
 
 // get请求
@@ -21,7 +21,7 @@ function httpGet(req, res){
     res.writeHead(200, {
         "content-type": "application/json;charset=utf-8"
     });
-    res.write(qs.parse(url));
+    res.write('222222222');
     res.end()
 }
 
