@@ -1,9 +1,16 @@
 const http = require('http')
 const https = require('https')
 const {logInfo} = require("../utils/logs");
+const cheerio = require('cheerio')
 
 function filterData(data){
-    console.log(data)
+    // console.log(data);
+    const $ = cheerio.load(data);
+    console.log(11111111)
+    $('.foot-ft').each((index, el) => {
+        console.log(index)
+        console.log($(el).html())
+    })
 }
 
 const serve = http.createServer((req,res) => {
