@@ -13,7 +13,7 @@ const serve = http.createServer((req,res) => {
     if (/^\/api/.test(url)){
         console.log(url)
         const proxy = createProxyMiddleware('/api', {
-            target: 'http://192.168.31.239:8082',
+            target: 'https://www.baidu.com',
             changeOrigin: true,
             pathRewrite: {
                 '/api': ''
