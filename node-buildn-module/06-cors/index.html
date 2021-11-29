@@ -1,0 +1,36 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>cors</title>
+</head>
+<body>
+
+</body>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+<script>
+    // 第一种用法
+    $(function (){
+        $.ajax({
+            method: 'GET',
+            url: 'http://localhost:8080',
+            success: function (res){
+                console.log(res)
+            }
+        })
+    })
+    // 第二种用法
+    // $(document).ready(function (){
+    //
+    // })
+
+
+    // fetch('http://localhost:8080')
+    //     .then(response => response.json())
+    //     .then(data => {
+    //         console.log(data)
+    //     });
+</script>
+</html>
