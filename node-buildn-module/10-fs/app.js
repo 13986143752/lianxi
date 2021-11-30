@@ -30,6 +30,11 @@ fs.readFile(filePath, (err, data) => {
     console.log('读取缓冲区的数据',myBuffer.toString());
 })
 
+// 创建文件
+let writePath = patch.join(__dirname, '/logs/test.txt')
+fs.writeFile(writePath, '写入文件', (err) => {
+    console.log(err)
+})
 
 // 删除文件
 // let filename = patch.join(__dirname,'./log')
