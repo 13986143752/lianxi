@@ -44,6 +44,11 @@ fs.appendFile(writePath, '追加数据', (err) => {
     }
 })
 
+// 读取文件数据并解析
+fs.readFile(writePath, (err, data) => {
+    console.log(data.toString())
+})
+
 // 删除文件
 // let filename = patch.join(__dirname,'./log')
 // fs.rmdir(filename, { recursive: true }, (err) => {
