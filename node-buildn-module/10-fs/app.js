@@ -9,11 +9,18 @@ fs.mkdir('log', (err) => {
     }
 })
 
-let filename = patch.join(__dirname,'./tmp/a/apple')
-fs.mkdir(filename, { recursive: true }, (err) => {
+// 删除文件
+let filename = patch.join(__dirname,'./log')
+fs.rmdir(filename, { recursive: true }, (err) => {
     if (err) throw err;
     console.log('创建成功')
 });
+
+// 删除文件
+let filename1 = patch.join(__dirname,'./tmp')
+fs.rmdir(filename1, { recursive: true }, () => {
+    console.log(11111111)
+})
 
 
 // path使用
