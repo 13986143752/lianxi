@@ -1,5 +1,6 @@
 const fs = require('fs');
 const patch = require('path')
+let myBuffer = new Buffer(0)
 
 fs.mkdir('log', (err) => {
     if (err){
@@ -9,18 +10,39 @@ fs.mkdir('log', (err) => {
     }
 })
 
-// 删除文件
-let filename = patch.join(__dirname,'./log')
-fs.rmdir(filename, { recursive: true }, (err) => {
-    if (err) throw err;
-    console.log('创建成功')
-});
+// let filename = patch.join(__dirname,'./log')
+// fs.mkdir(filename, () => {})
+
+// 修改文件名字
+// fs.rename('log', 'logs', () => {
+//     console.log('修改成功')
+// })
+
+// 读文件夹及读取文件夹内文件树
+// fs.readdir('logs', (err, files) => {
+//     console.log(files)
+// })
+
+// 读取文件内容，并冲缓冲区解析出来
+let filePath = patch.join(__dirname, '/logs/log.txt')
+fs.readFile(filePath, (err, data) => {
+    myBuffer = Buffer.concat([myBuffer,data]);
+    console.log('读取缓冲区的数据',myBuffer.toString());
+})
+
 
 // 删除文件
-let filename1 = patch.join(__dirname,'./tmp')
-fs.rmdir(filename1, { recursive: true }, () => {
-    console.log(11111111)
-})
+// let filename = patch.join(__dirname,'./log')
+// fs.rmdir(filename, { recursive: true }, (err) => {
+//     if (err) throw err;
+//     console.log('创建成功')
+// });
+
+// 删除文件
+// let filename1 = patch.join(__dirname,'./tmp')
+// fs.rmdir(filename1, { recursive: true }, () => {
+//     console.log(11111111)
+// })
 
 
 // path使用
