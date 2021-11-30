@@ -36,6 +36,14 @@ fs.writeFile(writePath, '写入文件', (err) => {
     console.log(err)
 })
 
+fs.appendFile(writePath, '追加数据', (err) => {
+    if (err){
+        console.log(err);
+    }else{
+        console.log('追加成功')
+    }
+})
+
 // 删除文件
 // let filename = patch.join(__dirname,'./log')
 // fs.rmdir(filename, { recursive: true }, (err) => {
