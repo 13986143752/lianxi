@@ -7,6 +7,9 @@
 // 创建一个Buffer类型数据
 const buffer = Buffer.from('12345678')
 
+// alloc方法返回一个指定长度的Buffer实例，若没有设置就是该长度就是0
+const buffer1 = Buffer.alloc(8)
+
 // toString()方法有一个入参,为编码格式,不传默认是UTF-8
 console.log(buffer.toString())
 // hex字符编码格式
@@ -26,3 +29,32 @@ console.log(buffer.toString('base64'))
  * binary - latin1 的别名。
  * hex - 将每个字节编码为两个十六进制字符。
  */
+
+// 将数据写入缓冲区;write方法的四个参数的含义如下：该方法的返回值是实际写入的长度，如果 buffer 空间不足， 则只会写入部分字符串。
+/**
+ * @string 需要写入暂存区的数据源，是个字符串类型
+ * @offset 该参数表示从第几位开始写入，及开始写入位置的索引，默认为0
+ * @length 长度，写入的字节数，默认为string.length，这个长度如果要设定的话，必须小于alloc()方法设定的长度
+ * @encoding 字符编码模式，默认是utf-8
+ * 有一种情况就是，如果buffer没有足够的空间保存整个字符串，那么就只会写入一部分
+ */
+let len = buffer1.write('12345677',0,"utf-8");
+console.log(len)
+
+// Buffer的实例方法如下:(buf是Buffer实例)
+
+/**
+ * @ buf.toJSON()  将 Node Buffer 转换为 JSON 对象
+ * @ buf.concat()  合并缓冲区
+ */
+let buf3 = Buffer.from('123456');
+console.log(buf3.toJSON())
+
+let buf4 = Buffer.from('123');
+let buf5 = Buffer.from('456');
+let buf6 = Buffer.concat([buf4,buf5]);
+
+console.log('合并后', buf6.toString())
+console.log('合并后1', buf6.toJSON())
+
+
