@@ -81,3 +81,6 @@ fs.readFile(writePath, (err, data) => {
 
 // path.resolve('a','/c')  E:/c  ,因为/斜杠代表根目录，所以得到的就是E:/c 所以一般拼接的时候需要小心点使用/斜杠
 // path.resolve(__dirname,'img/so')  E:\zf\webpack\1\src\img\so   这个就是将文件路径拼接，并不管这个路径是否真实存在。
+fs.opendir(filePath, (err,stats) => {
+    console.log('打开成功',stats)
+})
